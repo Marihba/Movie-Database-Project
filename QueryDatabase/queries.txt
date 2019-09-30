@@ -1,0 +1,14 @@
+;;Queries with xPath
+; The following is an expression that selects all the nodes where an actor
+; has acted in more than 50 movies
+
+/MovieSystem/Actor[moviesActed>50]/moviesActed
+
+;-------------------------------------------------------------------------------
+;;Queries with xQuery
+; The following is a query that returns all the movie titles where it contains an
+; actor with a blue eye color
+
+let $d := document("Movies.xml")
+for $eC in $d/Movies/Actor[@eyeColor = "Blue"]
+return $eC/title

@@ -1,0 +1,29 @@
+<?DOCTYPE MovieSystem[
+  <!ELEMENT MovieSystem (Movie+, actors+, director*)>
+  <!ELEMENT Movie (title, releaseDate, screenwriterID, budget, gross, rating)>
+    <!ATTLIST Movie movieID ID #required>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT releaseDate (#PCDATA)>
+  <!ELEMENT screenwriterID (#PCDATA)>
+  <!ELEMENT budget (#PCDATA)>
+  <!ELEMENT gross (#PCDATA)>
+  <!ELEMENT rating (#PCDATA)>
+
+  <!ELEMENT Director (locationId, firstName, surname, dateOfBirth,
+  moviesDirected+, eyeColor)>
+    <!ATTLIST Director directorID ID #required
+                       directs IDREFS #implied>
+  <!ELEMENT locationId (#PCDATA)>
+  <!ELEMENT firstName (#PCDATA)>
+  <!ELEMENT surname (#PCDATA)>
+  <!ELEMENT dateOfBirth (#PCDATA)>
+  <!ELEMENT moviesDirected (#PCDATA)>
+  <!ELEMENT eyeColor (#PCDATA)>
+
+  <!ELEMENT Actor (characterName, locationId, firstName ,surname, dateOfBirths,
+  moviesActed+, eyeColor)>
+    <!ATTLIST Actor actorID ID #required
+                    acts IDREFS #required>
+  <!ELEMENT characterName (#PCDATA)>
+  <!ELEMENT moviesActed (#PCDATA)>
+]>
